@@ -18,6 +18,6 @@ module.exports = {
         ])
     ],
     resolve: {
-        root: [path.join(__dirname, "bower_components"), path.join(__dirname, "./src")]
+        root: [path.join(__dirname, "bower_components"), path.join(__dirname, "./src"), path.join(__dirname, "./assets")]
     }
 };

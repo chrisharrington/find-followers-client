@@ -7,11 +7,13 @@ var React = require("react"),
 	
 	Base = require("./pages/base"),
 	Home = require("./pages/home"),
-	SignIn = require("./pages/sign-in");
+	Land = require("./pages/land"),
+	OAuthCallback = require("./pages/oauth-callback");
 
 var routes = (
 	<Route handler={Base} path="/">
-		<DefaultRoute handler={Authentication.isSignedIn() ? Home : SignIn} />
+		<DefaultRoute handler={Authentication.isSignedIn() ? Home : Land} />
+		<Route name="oauth-callback" handler={OAuthCallback} />
 	</Route>
 );
 
