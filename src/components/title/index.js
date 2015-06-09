@@ -6,8 +6,6 @@ require("./style.less");
 
 module.exports = React.createClass({
 	render: function() {
-		return <div className="tile">
-			{this.props.children}
-		</div>;
+		return <h1>{this.props.children}</h1>;
 	}
 });

@@ -1,0 +1,40 @@
+@import "../../style/variables.less";
+@import "../../style/mixins.less";
+
+.landing-image {
+	position:absolute;
+	width:100%;
+	min-height:600px;
+	background-size:cover !important;
+	z-index:-1;
+	-webkit-filter: grayscale(100%);
+}
+
+.banner-text {
+	@text-shadow-colour:black;
+	
+	text-transform:uppercase;
+	font-family:Oswald;
+	margin-top:50px;
+	font-size:37px;
+	color:white;
+	text-align:center;
+	text-shadow:-1px -1px 0 @text-shadow-colour, 1px -1px 0 @text-shadow-colour, -1px 1px 0 @text-shadow-colour, 1px 1px 0 @text-shadow-colour;
+}
+
+.info {
+	border-bottom:solid 1px @grey-border-colour;
+	margin-bottom:@spacing*2;
+	padding-bottom:@spacing*2;
+	
+	img {
+		display:block;
+		margin:auto;
+		width:150px;
+		height:150px;
+	}
+}
+
+.what {
+	margin-top:245px;
+}
