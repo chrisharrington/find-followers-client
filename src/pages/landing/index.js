@@ -17,7 +17,7 @@ require("./style.less");
 module.exports = React.createClass({
 	render: function() {
 		return <div>
-			<Image className="landing-image" src="landing.png" />
+			<Image className="landing-image" src="landing.jpg" />
 			<div className="container">
 				<div className="row">
 					<div className="col-xs-12">
