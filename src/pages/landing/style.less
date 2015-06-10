@@ -16,8 +16,8 @@
 	
 	text-transform:uppercase;
 	font-family:Oswald;
-	margin-top:50px;
-	font-size:37px;
+	margin-top:10px;
+	font-size:32px;
 	color:white;
 	text-align:center;
 	text-shadow:-1px -1px 0 @text-shadow-colour, 1px -1px 0 @text-shadow-colour, -1px 1px 0 @text-shadow-colour, 1px 1px 0 @text-shadow-colour;
@@ -25,8 +25,8 @@
 
 .info {
 	border-bottom:solid 1px @grey-border-colour;
-	margin-bottom:@spacing*4;
-	padding-bottom:@spacing*4;
+	margin-bottom:@spacing*2;
+	padding-bottom:@spacing*2;
 	
 	img {
 		display:block;
@@ -50,4 +50,21 @@
     color:white;
     font-family:Roboto;
     text-align:center;
+}
+
+@media (min-width:480px) {
+	.banner-text {
+		margin-top:50px;
+	}
+}
+
+@media (min-width:1100px) {
+	.info {
+		margin-bottom:@spacing*4 !important;
+		padding-bottom:@spacing*4 !important;
+	}
+	
+	.banner-text {
+		font-size:37px;
+	}
 }
