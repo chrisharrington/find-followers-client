@@ -15,6 +15,7 @@ module.exports = React.createClass({
 						<div className="logo-container">
 							<Logo />
 						</div>
+                        <button className="pull-right">Sign In</button>
 					</div>
 				</div>
 			</div>

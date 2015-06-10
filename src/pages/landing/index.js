@@ -7,7 +7,10 @@ var React = require("react"),
 	SignIn = require("./sign-in"),
 	
 	What = require("./what"),
-	Conversion = require("./conversion");
+	Conversion = require("./conversion"),
+    FavouriteCount = require("./favourite-count"),
+    HowItWorks = require("./how-it-works"),
+    Cost = require("./cost");
 
 require("./style.less");
 
@@ -28,6 +31,9 @@ module.exports = React.createClass({
 				</div>
 				<What />
 				<Conversion />
+                <FavouriteCount />
+                <HowItWorks />
+                <Cost />
 			</div>
 		</div>;
 	}

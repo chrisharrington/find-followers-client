@@ -4,11 +4,20 @@
 .page-header {
 	width:100%;
 	height:@header-height;
-	background:@header-background;
-	.box-shadow(0 2px 8px rgba(100, 100, 100, 0.8));
+	background:transparent;
+    font-size:1em;
 
 	.logo-container {
 		float:left;
 		.vertical-centre(@header-height);
 	}
+    
+    button {
+        margin-top:17px;
+        background:@secondary-font-colour;
+        color:white;
+        padding:8px 14px;
+        .border-radius;
+        border:solid 1px #AAA;
+    }
 }

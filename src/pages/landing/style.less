@@ -3,6 +3,7 @@
 
 .landing-image {
 	position:absolute;
+    top:0;
 	width:100%;
 	min-height:600px;
 	background-size:cover !important;
@@ -24,8 +25,8 @@
 
 .info {
 	border-bottom:solid 1px @grey-border-colour;
-	margin-bottom:@spacing*2;
-	padding-bottom:@spacing*2;
+	margin-bottom:@spacing*4;
+	padding-bottom:@spacing*4;
 	
 	img {
 		display:block;
@@ -37,4 +38,16 @@
 
 .what {
 	margin-top:245px;
+}
+
+.five-percent {
+    font-size:64px;
+    .box-sizing(content-box);
+    width:75px;
+    padding:@spacing/2;
+    .border-radius(50%);
+    background-color:@header-background;
+    color:white;
+    font-family:Roboto;
+    text-align:center;
 }
