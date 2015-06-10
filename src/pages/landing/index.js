@@ -24,11 +24,7 @@ module.exports = React.createClass({
 						<div className="banner-text">Target Your Audience. Spread Your Message. Find Your Followers.</div>
 					</div>
 				</div>
-				<div className="row">
-					<div className="col-xs-12">
-						<SignIn />
-					</div>
-				</div>
+                <SignIn />
 				<What />
 				<Conversion />
                 <FavouriteCount />

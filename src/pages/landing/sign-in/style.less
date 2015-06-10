@@ -1,31 +1,41 @@
 @import "../../../style/variables.less";
 @import "../../../style/mixins.less";
 
+.sign-in-container {
+    min-height:435px;
 
-.sign-in {
-	margin:auto;
-	margin-top:100px;
-	background-color:rgba(255, 255, 255, 0.8);
-	padding:1.5em;
-	.border-radius;
-	width:600px;
-	
-	.twitter-button {
-		float:left;
-		padding:0.5em 0.75em;
-		.border-radius;
-		color:white;
-		background:@twitter-blue;
-		cursor:pointer;
-		
-		>i {
-			float:left;
-			margin-right:@spacing/2;
-			font-size:20px;
-		}
-		
-		>span {
-			float:left;
-		}
-	}
+    .sign-in {
+        margin:auto;
+        margin-top:100px;
+        background-color:rgba(255, 255, 255, 0.8);
+        padding:1.5em;
+        .border-radius;
+        width:600px;
+
+        .logo {
+            font-size:2em;
+            font-family:Roboto;
+            text-transform:uppercase;
+            color:@secondary-font-colour;
+        }
+
+        .twitter-button {
+            float:left;
+            padding:0.5em 0.75em;
+            .border-radius;
+            color:white;
+            background:@twitter-blue;
+            cursor:pointer;
+
+            >i {
+                float:left;
+                margin-right:@spacing/2;
+                font-size:20px;
+            }
+
+            >span {
+                float:left;
+            }
+        }
+    }
 }
