@@ -6,7 +6,9 @@ var qwest = require("qwest"),
 
 module.exports = new function() {
     this.isSignedIn = function() {
-        return this.token !== undefined;
+        if (!this.user)
+            this.user = JSON.parse(window.sessionStorage.getItem("user"));
+        return this.user;
     },
     
     this.signIn = function() {
@@ -18,8 +20,10 @@ module.exports = new function() {
         return qwest.get(config.api + "auth/access-token", {
             oauth_token: parsed.oauth_token,
             oauth_verifier: parsed.oauth_verifier
-        }).then(function(data) {
-            
-        });
+        }).then(function(user) {
+            this.user = user;
+            window.sessionStorage.setItem(JSON.stringify(user));
+            window.location.href = config.home;
+        }.bind(this));
     };
 };

@@ -1,6 +1,7 @@
 "use strict";
 
-var React = require("react");
+var React = require("react"),
+    Auth = require("data/auth");
 
 module.exports = React.createClass({
 	componentDidMount: function() {
