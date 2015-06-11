@@ -7,7 +7,7 @@ var React = require("react"),
 module.exports = React.createClass({
 	componentDidMount: function() {
 		Auth.getAccessToken().then(function() {
-            window.location.href = config.home;
+            window.location.href = config.home; 
         });
 	},
 	
