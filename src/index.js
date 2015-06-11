@@ -3,7 +3,7 @@ var React = require("react"),
 	Route = Router.Route,
 	DefaultRoute = Router.DefaultRoute,
 	
-	Authentication = require("./auth"),
+	Auth = require("./data/auth"),
 	
 	Base = require("./pages/base"),
 	Home = require("./pages/home"),
@@ -12,7 +12,7 @@ var React = require("react"),
 
 var routes = (
 	<Route handler={Base} path="/">
-		<DefaultRoute handler={Authentication.isSignedIn() ? Home : Landing} />
+		<DefaultRoute handler={Auth.isSignedIn() ? Home : Landing} />
 		<Route name="oauth-callback" handler={OAuthCallback} />
 	</Route>
 );

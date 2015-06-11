@@ -2,7 +2,8 @@
 
 var React = require("react"),
 	
-	Logo = require("components/logo/big-logo");
+	Logo = require("components/logo/big-logo"),
+    Auth = require("data/auth");
 
 require("./style.less");
 
@@ -15,7 +16,7 @@ module.exports = React.createClass({
 						<div className="logo-container">
 							<Logo />
 						</div>
-                        <button className="pull-right">Sign In</button>
+                        <button className="pull-right" onClick={Auth.signIn}>Sign In</button>
 					</div>
 				</div>
 			</div>
