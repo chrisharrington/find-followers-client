@@ -6,7 +6,8 @@ var React = require("react"),
 
 module.exports = React.createClass({
 	componentDidMount: function() {
-		Auth.getAccessToken().then(function() {
+		Auth.getAccessToken().then(function(user) {
+			window.sessionStorage.setItem("signed-in-user", JSON.stringify(user));
             window.location.href = config.home; 
         });
 	},

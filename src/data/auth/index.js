@@ -22,7 +22,7 @@ module.exports = new function() {
             oauth_verifier: parsed.oauth_verifier
         }).then(function(user) {
             this.user = user;
-            window.sessionStorage.setItem(JSON.stringify(user));
+			return user;
         }.bind(this));
     };
 };
