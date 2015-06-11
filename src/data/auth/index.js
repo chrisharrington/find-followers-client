@@ -23,7 +23,6 @@ module.exports = new function() {
         }).then(function(user) {
             this.user = user;
             window.sessionStorage.setItem(JSON.stringify(user));
-            window.location.href = config.home;
         }.bind(this));
     };
 };
