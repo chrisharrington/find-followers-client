@@ -4,11 +4,45 @@
 .page-header {
 	width:100%;
 	height:@header-height;
-	background-color:#DADADA;
+	background-color:#EAEAEA;
+	color:black;
     font-size:1em;
 
 	.logo-container {
 		float:left;
 		.vertical-centre(@header-height);
+	}
+	
+	.user-info-container {
+		float:right;
+
+		img {
+			display:block;
+			float:right;
+			margin-left:@spacing/2;
+			.border-radius(50%);
+			height:@header-height*0.7;
+			margin-top:8px;
+		}
+		
+		.user {
+			float:right;
+			font-size:0.875em;
+			margin-top:13px;
+			
+			.name {
+				float:right;
+				font-weight:bold;
+				color:@secondary-font-colour;
+			}
+			
+			.handle {
+				float:right;
+				font-size:0.875em;
+				color:#777;
+			}
+		}
+		
+		
 	}
 }

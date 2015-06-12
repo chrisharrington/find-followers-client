@@ -5,10 +5,6 @@ div.logo.big {
 	font-size:22px;
 	color:white;
 	font-family:Arial;
-	
-    * {
-        text-shadow:-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-    }
     
 	>span {
 		float:left;
@@ -32,4 +28,10 @@ div.logo.big {
             text-shadow:none;
         }
     }
+	
+	&.shadow {
+		* {
+			text-shadow:-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+		}
+	}
 }

@@ -17,7 +17,7 @@ module.exports = React.createClass({
                     <span className="logo">Find<b>Followers</b></span>
                     <SubTitle className="spacing-top">Connect your Twitter account, choose hashtags that describe your audience and find new followers.</SubTitle>
                     <SubTitle className="spacing-top">Try it <b>free</b> for two weeks. After that, it's just $5 a month.</SubTitle>
-                    <TwitterButton className="spacing-top" onClick={Auth.signIn} />
+                    <TwitterButton className="spacing-top" onClick={Auth.getRequestToken} />
                     <div className="clearfix"></div>
                 </div>
             </div>

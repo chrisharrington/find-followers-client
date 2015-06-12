@@ -6,10 +6,10 @@ var React = require("react"),
 
 module.exports = React.createClass({
 	componentDidMount: function() {
-		Auth.getAccessToken().then(function(user) {
-			window.sessionStorage.setItem("signed-in-user", JSON.stringify(user));
-            window.location.href = config.home; 
-        });
+		var parsed = query.parse(location.search);
+		Auth.setCredentials(parsed.oauth_token, parsed.oauth_verifier);
+		
+		window.location.href = config.home;
 	},
 	
 	render: function() {

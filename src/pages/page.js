@@ -7,7 +7,7 @@ var React = require("react"),
 module.exports = React.createClass({
 	render: function() {
 		return <div>
-			<Header />
+			<Header user={this.props.user} />
             {this.props.children}
 		</div>;
 	}

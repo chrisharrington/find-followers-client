@@ -14,9 +14,9 @@ module.exports = React.createClass({
 				<div className="row">
 					<div className="col-xs-12">
 						<div className="logo-container">
-							<Logo />
+							<Logo className="shadow" />
 						</div>
-                        <button className="pull-right" onClick={Auth.signIn}>Sign In</button>
+                        <button className="pull-right" onClick={Auth.getRequestToken}>Sign In</button>
 					</div>
 				</div>
 			</div>

@@ -3,6 +3,7 @@
 var React = require("react"),
 	
 	Logo = require("components/logo/big-logo"),
+	UserInfo = require("./user-info"),
     Auth = require("data/auth");
 
 require("./style.less");
@@ -16,6 +17,7 @@ module.exports = React.createClass({
 						<div className="logo-container">
 							<Logo className="dark" />
 						</div>
+						<UserInfo user={this.props.user} />
 					</div>
 				</div>
 			</div>
