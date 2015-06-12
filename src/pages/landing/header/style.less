@@ -1,0 +1,23 @@
+@import "../../../style/variables.less";
+@import "../../../style/mixins.less";
+
+.landing-header {
+	width:100%;
+	height:@header-height;
+	background:transparent;
+    font-size:1em;
+
+	.logo-container {
+		float:left;
+		.vertical-centre(@header-height);
+	}
+    
+    button {
+        margin-top:10px;
+        background:@secondary-font-colour;
+        color:white;
+        padding:8px 14px;
+        .border-radius;
+        border:solid 1px #666;
+    }
+}

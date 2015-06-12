@@ -9,13 +9,14 @@ require("./style.less");
 
 module.exports = React.createClass({
 	render: function() {
-		return <div className="page-header">
+		return <div className="landing-header">
 			<div className="container">
 				<div className="row">
 					<div className="col-xs-12">
 						<div className="logo-container">
-							<Logo className="dark" />
+							<Logo />
 						</div>
+                        <button className="pull-right" onClick={Auth.signIn}>Sign In</button>
 					</div>
 				</div>
 			</div>

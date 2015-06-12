@@ -1,14 +1,18 @@
 "use strict";
 
 var React = require("react"),
-	_ = require("lodash");
+	_ = require("lodash"),
+    
+    Page = require("../page");
 
 require("./style.less");
 
 module.exports = React.createClass({
 	render: function() {
-		return <div className="container spacing-top">
-			Hello, world!
-		</div>;
+		return <Page>
+            <div className="container spacing-top">
+                Hello, world!
+            </div>
+        </Page>;
 	}
 });

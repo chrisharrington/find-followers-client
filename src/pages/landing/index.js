@@ -6,6 +6,8 @@ var React = require("react"),
 	Image = require("./image"),
 	SignIn = require("./sign-in"),
 	
+    Header = require("./header"),
+    
 	What = require("./what"),
 	Conversion = require("./conversion"),
     FavouriteCount = require("./favourite-count"),
@@ -17,6 +19,7 @@ require("./style.less");
 module.exports = React.createClass({
 	render: function() {
 		return <div>
+            <Header />
 			<Image className="landing-image" src="landing.jpg" />
 			<div className="container">
 				<div className="row">

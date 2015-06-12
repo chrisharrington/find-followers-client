@@ -10,7 +10,6 @@ module.exports = React.createClass({
 	render: function() {
 		return <div>
             <Tooltip />
-            <Header />
 			<RouteHandler />
 		</div>;
 	}

@@ -7,7 +7,7 @@ var qwest = require("qwest"),
 module.exports = new function() {
     this.isSignedIn = function() {
         if (!this.user)
-            this.user = JSON.parse(window.sessionStorage.getItem("user"));
+            this.user = JSON.parse(window.sessionStorage.getItem("signed-in-user"));
         return this.user;
     },
     

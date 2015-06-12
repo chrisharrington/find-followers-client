@@ -1,3 +1,6 @@
+@import "../../../style/variables.less";
+@import "../../../style/mixins.less";
+
 div.logo.big {
 	font-size:22px;
 	color:white;
@@ -21,4 +24,12 @@ div.logo.big {
 			font-weight:bold;
 		}
 	}
+    
+    &.dark {
+        color:black;
+        
+        * {
+            text-shadow:none;
+        }
+    }
 }
