@@ -23,6 +23,7 @@
     "blueimp-md5": "~1.1.0",
     "lodash": "~3.8.0",
     "speakingurl": "~3.0.0",
-    "query-string": "~2.3.0"
+    "query-string": "~2.3.0",
+    "promiscuous": "~0.6.0"
   }
 }

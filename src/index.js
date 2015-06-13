@@ -19,6 +19,5 @@ var routes = (
 );
 
 Router.run(routes, function(Handler, state) {
-    console.log(Auth.isSignedIn());
 	React.render(<Handler params={state.params} />, document.body);
 });

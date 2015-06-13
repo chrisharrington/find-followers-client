@@ -17,16 +17,20 @@ module.exports = React.createClass({
 	},
 	
 	componentDidMount: function() {
-		this.setState({ loading: true });
-		
-		Auth.getAccessToken().then(function(user) {
-			window.sessionStorage.setItem("signed-in-user", JSON.stringify(user));
-            window.location.href = config.home;
-			
-			this.setState({ loading: false, user: user });
-        }.bind(this)).catch(function() {
-			window.location.hash = "#/landing";
-		});
+        if (!this.state.user)
+            window.location.hash = "#";
+//        else {
+//            this.setState({ loading: true });
+//
+//            Auth.getAccessToken().then(function(user) {
+//                window.sessionStorage.setItem("signed-in-user", JSON.stringify(user));
+//                window.location.href = config.home;
+//
+//                this.setState({ loading: false, user: user });
+//            }.bind(this)).catch(function() {
+//                window.location.hash = "#/landing";
+//            });
+//        }
 	},
 	
 	render: function() {

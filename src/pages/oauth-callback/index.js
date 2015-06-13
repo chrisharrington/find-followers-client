@@ -2,17 +2,27 @@
 
 var React = require("react"),
     Auth = require("data/auth"),
-    config = require("config");
+    config = require("config"),
+    Loader = require("components/loader"),
+    Header = require("components/header"),
+    query = require("query-string");
+
+require("./style.less");
 
 module.exports = React.createClass({
 	componentDidMount: function() {
-		var parsed = query.parse(location.search);
-		Auth.setCredentials(parsed.oauth_token, parsed.oauth_verifier);
-		
-		window.location.href = config.home;
+        Auth.getAccessToken().then(function(user) {
+            window.location.href = config.home;
+        });
 	},
 	
 	render: function() {
-		return <div></div>;
+		return <div>
+            <Header />
+            <div className="loader-container">
+                <Loader style="dark big" />
+                <div className="loader-text center-block">Loading...</div>
+            </div>
+        </div>;
 	}
 });
