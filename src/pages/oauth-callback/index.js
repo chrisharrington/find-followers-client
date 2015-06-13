@@ -11,7 +11,8 @@ require("./style.less");
 
 module.exports = React.createClass({
 	componentDidMount: function() {
-        Auth.getAccessToken().then(function(user) {
+        var parsed = query.parse(location.search);
+        Auth.getAccessToken(parsed.oauth_token, parsed.oauth_verifier).then(function(user) {
             window.location.href = config.home;
         });
 	},
