@@ -1,6 +1,7 @@
 @import "./variables.less";
+@import "./mixins.less";
 
-body { padding:0; margin:0; font-family:"Lato"; background:white; font-size:16px; }
+body { padding:0; margin:0; font-family:"Lato"; background:#F0F0F0; font-size:16px; }
 
 a { color:@secondary-font-colour; text-decoration:none; }
 
@@ -11,3 +12,6 @@ a { color:@secondary-font-colour; text-decoration:none; }
 @media (min-width:768px) {
 	.show-md { display:block !important; }
 }
+
+.pull-right { float:right; }
+.pull-left { float:left; }

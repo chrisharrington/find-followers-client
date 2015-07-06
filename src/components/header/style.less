@@ -1,18 +1,21 @@
 @import "../../style/variables.less";
 @import "../../style/mixins.less";
 
+@header-secondary-font-colour:lighten(@secondary-font-colour, 35%);
+
 .page-header {
 	width:100%;
 	height:@header-height;
-	background-color:#EAEAEA;
-	color:black;
+	background-color:@secondary-font-colour;
+	color:white;
     font-size:1em;
+	.dark-shadow;
 
 	.logo-container {
 		float:left;
 		.vertical-centre(@header-height);
 	}
-	
+
 	.user-info-container {
 		float:right;
 
@@ -24,25 +27,21 @@
 			height:@header-height*0.7;
 			margin-top:8px;
 		}
-		
+
 		.user {
 			float:right;
 			font-size:0.875em;
 			margin-top:13px;
-			
+
 			.name {
 				float:right;
-				font-weight:bold;
-				color:@secondary-font-colour;
 			}
-			
+
 			.handle {
 				float:right;
 				font-size:0.875em;
-				color:#777;
+				color:@header-secondary-font-colour;
 			}
 		}
-		
-		
 	}
 }
