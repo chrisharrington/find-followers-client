@@ -1,5 +1,7 @@
-@import "mixins.less";
-@import "variables.less";
+@import "../variables.less";
+@import "../mixins.less";
+
+.page-container { padding-left:@menu-width+25px !important; }
 
 .spacing-right { margin-right:@spacing; }
 .spacing-left { margin-left:@spacing; }
@@ -11,61 +13,61 @@
 .for(@sizes); .-each(@value) {
     .spacing- {
         &@{value} {
-            margin: unit(@value, px) !important;
+            margin: unit(@value, px);
         }
     }
 
     .spacing-top- {
         &@{value} {
-            margin-top: unit(@value, px) !important;
+            margin-top: unit(@value, px);
         }
     }
 
     .spacing-right- {
         &@{value} {
-            margin-right: unit(@value, px) !important;
+            margin-right: unit(@value, px);
         }
     }
 
     .spacing-bottom- {
         &@{value} {
-            margin-bottom: unit(@value, px) !important;
+            margin-bottom: unit(@value, px);
         }
     }
 
     .spacing-left- {
         &@{value} {
-            margin-left: unit(@value, px) !important;
+            margin-left: unit(@value, px);
         }
     }
 
     .padding- {
         &@{value} {
-            padding: unit(@value, px) !important;
+            padding: unit(@value, px);
         }
     }
 
     .padding-top- {
         &@{value} {
-            padding-top: unit(@value, px) !important;
+            padding-top: unit(@value, px);
         }
     }
 
     .padding-right- {
         &@{value} {
-            padding-right: unit(@value, px) !important;
+            padding-right: unit(@value, px);
         }
     }
 
     .padding-bottom- {
         &@{value} {
-            padding-bottom: unit(@value, px) !important;
+            padding-bottom: unit(@value, px);
         }
     }
 
     .padding-left- {
         &@{value} {
-            padding-left: unit(@value, px) !important;
+            padding-left: unit(@value, px);
         }
     }
 }
@@ -74,6 +76,14 @@
 
 .pull-right-sm, .pull-right-md { float:none; }
 .full-width { width:100%; }
+
+.clearfix, .clearfix-after:after { float:none; clear:both; content:""; }
+
+.show-md { display:none; }
+
+@media (min-width:768px) {
+	.show-md { display:block; }
+}
 
 @media (min-width:480px) {
     .auto-width-xs { width:auto; }

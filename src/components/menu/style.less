@@ -6,10 +6,12 @@ div.menu {
     top:@header-height;
     left:0;
     bottom:0;
-    width:261px;
-    background:@dark-background-colour;
+    width:@menu-width;
+    background:lighten(@dark-background-colour, 5%);
 
     .menu-item {
+        display:block;
+        text-decoration:none;
         width:100%;
         padding:@spacing;
         font-size:0.875em;
@@ -18,11 +20,11 @@ div.menu {
         border-left:solid 5px transparent;
 
         &:hover {
-            background:lighten(@dark-background-colour, 3%);
+            background:lighten(@dark-background-colour, 8%);
         }
 
         &.selected {
-            background:lighten(@dark-background-colour, 5%);
+            background:lighten(@dark-background-colour, 10%);
             border-color:@light-secondary-colour;
             cursor:default;
             font-weight:bold;
