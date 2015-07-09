@@ -2,7 +2,6 @@
 @import "../../style/mixins.less";
 
 div.menu {
-    padding-top:@spacing;
     position:fixed;
     top:@header-height;
     left:0;
@@ -14,19 +13,20 @@ div.menu {
         width:100%;
         padding:@spacing;
         font-size:0.875em;
-        color:#B0B0B0;
+        color:#D0D0D0;
         cursor:pointer;
         border-left:solid 5px transparent;
 
         &:hover {
             background:lighten(@dark-background-colour, 3%);
-            color:#D0D0D0;
         }
 
         &.selected {
             background:lighten(@dark-background-colour, 5%);
-            color:white;
             border-color:@light-secondary-colour;
+            cursor:default;
+            font-weight:bold;
+            color:white;
         }
     }
 }
