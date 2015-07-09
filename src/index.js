@@ -8,13 +8,15 @@ var React = require("react"),
 	Base = require("./pages/base"),
 	Home = require("./pages/home"),
 	Landing = require("./pages/landing"),
-	OAuthCallback = require("./pages/oauth-callback");
+	OAuthCallback = require("./pages/oauth-callback"),
+    Setup = require("./pages/setup");
 
 var routes = (
 	<Route handler={Base} path="/">
 		<DefaultRoute handler={Landing} />
 		<Route name="oauth_callback" handler={OAuthCallback} />
 		<Route name="home" handler={Home} />
+        <Route name="setup" handler={Setup} />
 	</Route>
 );
 

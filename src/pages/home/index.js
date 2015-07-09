@@ -2,7 +2,7 @@
 
 var React = require("react"),
 	_ = require("lodash"),
-    
+
     Page = require("../page"),
 	Auth = require("data/auth");
 
@@ -11,11 +11,10 @@ require("./style.less");
 module.exports = React.createClass({
 	getInitialState: function() {
 		return {
-			loading: false,
 			user: Auth.getUser()
-		};
+		}
 	},
-	
+
 	componentDidMount: function() {
         if (!this.state.user)
             window.location.hash = "#";
@@ -32,12 +31,10 @@ module.exports = React.createClass({
 //            });
 //        }
 	},
-	
+
 	render: function() {
-		return <Page user={this.state.user}>
-            <div className="container spacing-top">
-                Hello, world!
-            </div>
+		return <Page>
+            Hello, world!
         </Page>;
 	}
 });

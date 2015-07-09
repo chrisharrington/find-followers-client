@@ -1,7 +1,11 @@
 "use strict";
 
 var React = require("react"),
-	Stat = require("./stat");
+	Stat = require("./stat"),
+    UserStore = require("data/stores/user"),
+    Auth = require("data/auth");
+
+var GET_USER = "get-user";
 
 module.exports = React.createClass({
 	getInitialState: function() {
@@ -9,6 +13,16 @@ module.exports = React.createClass({
 			loading: false
 		};
 	},
+    
+    componentWillMount: function() {
+        UserStore.get.subscribeAndNotify(GET_USER, function(user) {
+            this.setState({ user: user });
+        }.bind(this));
+    },
+    
+    componentDidMount: function() {
+        UserStore.get.execute({ handle: Auth.getUser().handle });
+    },
 	
 	render: function() {
         var user = this.props.user;
@@ -32,6 +46,10 @@ module.exports = React.createClass({
 		if (!user)
 			return <div></div>;
 			
-		return <div>user stats!</div>;
+		return <div className="stats">
+            <Stat label="Followers">{user.followers_count}</Stat>
+            <Stat label="Following">{user.friends_count}</Stat>
+            <Stat label="Favourites">{user.favourites_count}</Stat>
+        </div>;
 	}
 });

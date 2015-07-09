@@ -6,66 +6,66 @@
 .spacing-top { margin-top:@spacing; }
 .spacing-bottom { margin-bottom:@spacing; }
 
-@sizes: 0, 2, 3, 5, 10, 15, 20, 30;
+@sizes: 0, 2, 3, 5, 10, 15, 20, 25, 30;
 
 .for(@sizes); .-each(@value) {
     .spacing- {
         &@{value} {
-            margin: unit(@value, px) !important;   
+            margin: unit(@value, px) !important;
         }
     }
-    
+
     .spacing-top- {
         &@{value} {
             margin-top: unit(@value, px) !important;
         }
     }
-    
+
     .spacing-right- {
         &@{value} {
-            margin-right: unit(@value, px) !important;   
+            margin-right: unit(@value, px) !important;
         }
     }
-	
+
     .spacing-bottom- {
         &@{value} {
             margin-bottom: unit(@value, px) !important;
         }
     }
-    
+
     .spacing-left- {
         &@{value} {
-            margin-left: unit(@value, px) !important;   
+            margin-left: unit(@value, px) !important;
         }
     }
-    
+
     .padding- {
         &@{value} {
-            padding: unit(@value, px) !important;   
+            padding: unit(@value, px) !important;
         }
     }
-    
+
     .padding-top- {
         &@{value} {
-            padding-top: unit(@value, px) !important;   
+            padding-top: unit(@value, px) !important;
         }
     }
-    
+
     .padding-right- {
         &@{value} {
-            padding-right: unit(@value, px) !important;   
+            padding-right: unit(@value, px) !important;
         }
     }
-    
+
     .padding-bottom- {
         &@{value} {
-            padding-bottom: unit(@value, px) !important;   
+            padding-bottom: unit(@value, px) !important;
         }
     }
-    
+
     .padding-left- {
         &@{value} {
-            padding-left: unit(@value, px) !important;   
+            padding-left: unit(@value, px) !important;
         }
     }
 }
@@ -81,14 +81,14 @@
 
 @media (min-width:768px) {
     .spacing-top-0-sm { margin-top:0px; }
-    
+
     .pull-right-sm { float:right; }
     .auto-width-sm { width:auto; }
 }
 
 @media (min-width:992px) {
     .spacing-top-0-md { margin-top:0px; }
-    
+
     .pull-right-md { float:right; }
     .auto-width-md { width:auto; }
 }

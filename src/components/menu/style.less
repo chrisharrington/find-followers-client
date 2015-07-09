@@ -1,0 +1,32 @@
+@import "../../style/variables.less";
+@import "../../style/mixins.less";
+
+div.menu {
+    padding-top:@spacing;
+    position:fixed;
+    top:@header-height;
+    left:0;
+    bottom:0;
+    width:261px;
+    background:@dark-background-colour;
+
+    .menu-item {
+        width:100%;
+        padding:@spacing;
+        font-size:0.875em;
+        color:#B0B0B0;
+        cursor:pointer;
+        border-left:solid 5px transparent;
+
+        &:hover {
+            background:lighten(@dark-background-colour, 3%);
+            color:#D0D0D0;
+        }
+
+        &.selected {
+            background:lighten(@dark-background-colour, 5%);
+            color:white;
+            border-color:@light-secondary-colour;
+        }
+    }
+}

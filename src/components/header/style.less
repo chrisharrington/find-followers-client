@@ -1,18 +1,24 @@
 @import "../../style/variables.less";
 @import "../../style/mixins.less";
 
+@font-colour:lighten(@secondary-colour, 15%);
+
 .page-header {
 	width:100%;
 	height:@header-height;
-	background-color:#EAEAEA;
-	color:black;
+	background-color:@dark-background-colour;
+	color:white;
     font-size:1em;
+
+	.container-fluid {
+		padding:0 @spacing;
+	}
 
 	.logo-container {
 		float:left;
 		.vertical-centre(@header-height);
 	}
-	
+
 	.user-info-container {
 		float:right;
 
@@ -24,25 +30,48 @@
 			height:@header-height*0.7;
 			margin-top:8px;
 		}
-		
+
 		.user {
 			float:right;
 			font-size:0.875em;
 			margin-top:13px;
-			
+
 			.name {
 				float:right;
 				font-weight:bold;
-				color:@secondary-font-colour;
+				color:@light-secondary-colour;
 			}
-			
+
 			.handle {
 				float:right;
 				font-size:0.875em;
-				color:#777;
+				color:#E0E0E0;
 			}
 		}
-		
-		
+
+		.stats {
+            float:right;
+            margin-right:@spacing*4;
+            font-size:0.875em;
+
+            >div {
+                float:left;
+                margin-top:16px;
+                margin-left:@spacing*2;
+
+                >span.label {
+                    float:left;
+                    text-transform:uppercase;
+                    color:@light-secondary-colour;
+                    font-size:0.75em;
+                }
+
+                >span.value {
+                    float:left;
+                    color:#E0E0E0;
+                    font-weight:bold;
+                }
+            }
+        }
 	}
 }

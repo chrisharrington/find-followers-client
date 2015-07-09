@@ -1,5 +1,4 @@
-var config = require("../../../config"),
-    react = require("react"),
+var config = require("config"),
 	_ = require("lodash"),
     qwest = require("qwest");
 
@@ -7,10 +6,9 @@ module.exports = function(verb, collection) {
 	var _subscribers = {}, _result;
 	
 	this.execute = function(params) {
-        var url = "fixtures/" + collection + ".json";
-		return qwest[verb](url, params).then(function(response) {
-			if (params)
-				response = _.where(response, params);
+        var url = config.api + collection
+        
+		return qwest[verb](config.api + collection, params).then(function(response) {
 			_result = response;
 			_notify();
 		});
