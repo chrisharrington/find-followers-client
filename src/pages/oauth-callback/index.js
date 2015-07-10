@@ -5,7 +5,7 @@ var React = require("react"),
     config = require("config"),
     Loader = require("components/loader"),
     Header = require("components/header"),
-    query = require("query-string");
+    query = require("querystring");
 
 require("./style.less");
 
@@ -16,7 +16,7 @@ module.exports = React.createClass({
             window.location.href = config.home;
         });
 	},
-	
+
 	render: function() {
 		return <div>
             <Header />

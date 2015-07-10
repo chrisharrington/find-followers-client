@@ -2,7 +2,7 @@
 
 var qwest = require("qwest"),
     config = require("config"),
-    query = require("query-string"),
+    query = require("querystring"),
     Promise = require("ayepromise");
 
 var SIGNED_IN_USER = "signed-in-user";

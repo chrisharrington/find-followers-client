@@ -2,7 +2,9 @@
 
 var React = require("react"),
 
-    FavouriteStore = require("data/stores/favourite");
+    FavouriteStore = require("data/stores/favourite"),
+
+    Chartist = require("chartist");
 
 require("./style.less");
 
@@ -34,7 +36,7 @@ module.exports = React.createClass({
         // Create a new line chart object where as first parameter we pass in a selector
         // that is resolving to our chart container element. The Second parameter
         // is the actual data object.
-        //new Chartist.Line('.favourites-chart', data);
+        new Chartist.Line('.favourites-chart', data);
     },
 
 	render: function() {

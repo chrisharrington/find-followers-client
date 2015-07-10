@@ -1,10 +1,11 @@
 var gulp = require("gulp"),
-	webpackPlugins = require("webpack"),
 	path = require("path"),
     gutil = require("gulp-util"),
     moment = require("moment"),
 	uglify = require("gulp-uglify"),
-	webpack = require("webpack-stream");
+	webpack = require("webpack-stream"),
+
+	BowerWebpackPlugin = require("bower-webpack-plugin");
 
 gulp.task("script", function() {
     return _buildTask(false, false);
@@ -28,19 +29,20 @@ function _buildTask(watch, prod) {
 			module: {
 				loaders: [
 					{ test: /\.js$/, loader: "jsx" },
-            		{ test: /\.less$/, loader: "style!css!less" }
+            		{ test: /\.less$/, loader: "style!css!less" },
+					{ test: /\.css$/, loader: "style!css" }
 				]
 			},
 			plugins: [
-				new webpackPlugins.ResolverPlugin([
-					new webpackPlugins.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-				])
+				new BowerWebpackPlugin({
+					//excludes: /.*\.css/
+				})
 			],
 			resolve: {
-				root: [path.join(__dirname, "../bower_components"), path.join(__dirname, "../src"), path.join(__dirname, "../assets")]
+				root: [path.join(__dirname, "../src"), path.join(__dirname, "../assets")]
 			}
 		}, null, _after));
-	
+
 	if (prod)
 		stream = stream.pipe(uglify());
 
