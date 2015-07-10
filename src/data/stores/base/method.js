@@ -1,13 +1,20 @@
 var config = require("config"),
 	_ = require("lodash"),
-    qwest = require("qwest");
+    qwest = require("qwest"),
+
+	Auth = require("data/auth");
 
 module.exports = function(verb, collection) {
 	var _subscribers = [], _result;
 
 	this.execute = function(params) {
-        var url = config.api + collection
+        params = params || {};
 
+		var user = Auth.getUser();
+		if (user)
+			params.handle = user.handle;
+
+		var url = config.api + collection;
 		return qwest[verb](config.api + collection, params).then(function(response) {
 			_result = response;
 			_notify();

@@ -5,31 +5,35 @@ div.logo.big {
 	font-size:30px;
 	color:white;
 	font-family:Arial;
-    
+
 	>span {
 		float:left;
 		text-transform:uppercase;
         color:white;
-		
+
 		&.find {
 			font-family:"Roboto Condensed";
 			font-weight:300;
 		}
-		
+
 		&.followers {
 			font-family:Roboto;
 			font-weight:bold;
 		}
 	}
-    
+
     &.dark {
         color:black;
-        
+
+		.followers {
+			color:@light-secondary-colour;
+		}
+
         * {
             text-shadow:none;
         }
     }
-	
+
 	&.shadow {
 		* {
 			text-shadow:-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
