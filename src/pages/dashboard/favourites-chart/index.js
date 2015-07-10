@@ -4,7 +4,7 @@ var React = require("react"),
 
     FavouriteStore = require("data/stores/favourite"),
 
-    LineChart = require("components/charts/line"),
+    PieChart = require("components/charts/pie"),
     Terms = require("./terms");
 
 require("./style.less");
@@ -19,9 +19,7 @@ module.exports = React.createClass({
     componentWillMount: function() {
         FavouriteStore.get.subscribeAndNotify( function(favourites) {
             this.setState({ favourites: favourites });
-            this.refs.lineChart.data(favourites);
-            console.log(favourites.dates.length);
-            console.log(favourites.data["#blah"].length);
+            this.refs.chart.data(favourites);
         }.bind(this));
     },
 
@@ -30,8 +28,8 @@ module.exports = React.createClass({
     },
 
 	render: function() {
-		return <div className="ct-chart ct-double-octave favourites-chart">
-            <LineChart ref="lineChart" />
+		return <div className="favourites-chart">
+            <PieChart ref="chart" />
 		</div>;
 	}
 });
