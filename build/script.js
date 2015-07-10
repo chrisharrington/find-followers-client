@@ -34,9 +34,7 @@ function _buildTask(watch, prod) {
 				]
 			},
 			plugins: [
-				new BowerWebpackPlugin({
-					//excludes: /.*\.css/
-				})
+				new BowerWebpackPlugin()
 			],
 			resolve: {
 				root: [path.join(__dirname, "../src"), path.join(__dirname, "../assets")]

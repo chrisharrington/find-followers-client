@@ -40,6 +40,6 @@ module.exports = React.createClass({
     },
 
 	render: function() {
-		return <div className="ct-chart ct-golden-section favourites-chart"></div>;
+		return <div className="ct-chart ct-double-octave favourites-chart"></div>;
 	}
 });
