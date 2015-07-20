@@ -12,6 +12,7 @@ module.exports = React.createClass({
 			<MenuItem route="dashboard">Dashboard</MenuItem>
 			<MenuItem route="phrases">Phrases</MenuItem>
 			<MenuItem route="account">Account</MenuItem>
+			<MenuItem route="logs">Logs</MenuItem>
 		</div>;
 	}
 });

@@ -1,12 +1,16 @@
 var config = require("config"),
 	_ = require("lodash"),
-    qwest = require("qwest");
+    qwest = require("qwest"),
+	auth = require("data/auth");
 
 module.exports = function(verb, collection) {
-	var _subscribers = [], _result;
+	var _subscribers = {}, _result;
 
 	this.execute = function(params) {
-        var url = config.api + collection
+        var url = config.api + collection;
+		params = params || {};
+		if (!params.handle)
+			params.handle = (auth.getUser() || {}).handle;
 
 		return qwest[verb](config.api + collection, params).then(function(response) {
 			_result = response;
@@ -14,12 +18,12 @@ module.exports = function(verb, collection) {
 		});
 	};
 
-	this.subscribe = function(callback) {
-		_subscribe(callback);
+	this.subscribe = function(key, callback) {
+		_subscribe(key, callback);
 	};
 
-	this.subscribeAndNotify = function(callback) {
-		_subscribe(callback);
+	this.subscribeAndNotify = function(key, callback) {
+		_subscribe(key, callback);
 		_notify();
 	};
 
@@ -27,8 +31,8 @@ module.exports = function(verb, collection) {
 		delete _subscribers[key];
 	};
 
-	function _subscribe(callback) {
-		_subscribers.push(callback);
+	function _subscribe(key, callback) {
+		_subscribers[key] = callback;
 	};
 
 	function _notify() {
@@ -36,7 +40,8 @@ module.exports = function(verb, collection) {
 			return;
 
 		_.each(_subscribers, function(subscriber) {
-			subscriber(_result);
+			if (subscriber)
+				subscriber(_result);
 		});
 	};
 };

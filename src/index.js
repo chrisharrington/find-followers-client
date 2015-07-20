@@ -10,7 +10,8 @@ var React = require("react"),
 	Phrases = require("./pages/phrases"),
 	Landing = require("./pages/landing"),
 	OAuthCallback = require("./pages/oauth-callback"),
-    Setup = require("./pages/setup");
+    Setup = require("./pages/setup"),
+	Logs = require("./pages/logs");
 
 var routes = (
 	<Route handler={Base} path="/">
@@ -19,6 +20,7 @@ var routes = (
 		<Route name="dashboard" handler={Dashboard} />
 		<Route name="phrases" handler={Phrases} />
         <Route name="setup" handler={Setup} />
+		<Route name="logs" handler={Logs} />
 	</Route>
 );
 
