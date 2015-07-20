@@ -5,30 +5,28 @@ var React = require("react"),
     UserStore = require("data/stores/user"),
     Auth = require("data/auth");
 
-var GET_USER = "get-user";
-
 module.exports = React.createClass({
 	getInitialState: function() {
 		return {
 			loading: false
 		};
 	},
-    
+
     componentWillMount: function() {
-        UserStore.get.subscribeAndNotify(GET_USER, function(user) {
+        UserStore.get.subscribeAndNotify(function(user) {
             this.setState({ user: user });
         }.bind(this));
     },
-    
+
     componentDidMount: function() {
         UserStore.get.execute({ handle: Auth.getUser().handle });
     },
-	
+
 	render: function() {
         var user = this.props.user;
         return user ? this.renderUser(user) : <div></div>;
 	},
-    
+
     renderUser: function(user) {
         return <div className="user-info-container">
 			<img src={user.image} alt="profile-image" />
@@ -40,12 +38,12 @@ module.exports = React.createClass({
 			{this.renderStats()}
         </div>;
     },
-	
+
 	renderStats: function() {
 		var user = this.state.user;
 		if (!user)
 			return <div></div>;
-			
+
 		return <div className="stats">
             <Stat label="Followers">{user.followers_count}</Stat>
             <Stat label="Following">{user.friends_count}</Stat>

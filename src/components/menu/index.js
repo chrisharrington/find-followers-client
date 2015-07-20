@@ -9,9 +9,9 @@ require("./style.less");
 module.exports = React.createClass({
 	render: function() {
 		return <div className="menu">
-			<MenuItem selected="true">Dashboard</MenuItem>
-			<MenuItem>Phrases</MenuItem>
-			<MenuItem>Account</MenuItem>
+			<MenuItem route="dashboard">Dashboard</MenuItem>
+			<MenuItem route="phrases">Phrases</MenuItem>
+			<MenuItem route="account">Account</MenuItem>
 		</div>;
 	}
 });

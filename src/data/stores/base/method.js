@@ -3,38 +3,40 @@ var config = require("config"),
     qwest = require("qwest");
 
 module.exports = function(verb, collection) {
-	var _subscribers = {}, _result;
-	
+	var _subscribers = [], _result;
+
 	this.execute = function(params) {
         var url = config.api + collection
-        
+
 		return qwest[verb](config.api + collection, params).then(function(response) {
 			_result = response;
 			_notify();
 		});
 	};
-	
-	this.subscribe = function(key, callback) {
-		_subscribe(key, callback);
+
+	this.subscribe = function(callback) {
+		_subscribe(callback);
 	};
-	
-	this.subscribeAndNotify = function(key, callback) {
-		_subscribe(key, callback);
+
+	this.subscribeAndNotify = function(callback) {
+		_subscribe(callback);
+		_notify();
 	};
-	
+
 	this.unsubscribe = function(key) {
 		delete _subscribers[key];
 	};
-	
-	function _subscribe(key, callback) {
-		_subscribers[key] = callback;
+
+	function _subscribe(callback) {
+		_subscribers.push(callback);
 	};
-	
+
 	function _notify() {
 		if (!_result)
 			return;
-		
-		for (var key in _subscribers)
-			_subscribers[key](_result);
+
+		_.each(_subscribers, function(subscriber) {
+			subscriber(_result);
+		});
 	};
 };
